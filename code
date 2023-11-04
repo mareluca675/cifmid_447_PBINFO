@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    int n, max = -1, min = 10, uc, copien, k = -1;
+    
+    cin >> n;
+    
+    copien = n;
+    
+    while(n > 0)
+    {
+        uc = n % 10;
+        
+        if(uc > max)
+        {
+            max = uc;
+        }
+        
+        if(uc < min)
+        {
+            min = uc;
+        }
+        
+        n = n / 10;
+    }
+    
+    n = copien;
+    
+    while(n > 0)
+    {
+        uc = n % 10;
+        
+        if(uc > min and uc < max)
+        {
+            k = uc;
+        }
+        
+        n = n /10;
+    }
+    
+    cout << k;
+}
